@@ -107,7 +107,7 @@ def sum_of_digits(number):
 def run_test_problem1a():
     """ Tests the   problem1a   function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   4   ** tests (we wrote two for you).
     # -------------------------------------------------------------------------
@@ -157,6 +157,14 @@ def run_test_problem1a():
     print_actual_result_of_test(expected, actual, test_results, precision=3)
 
     print_summary_of_test_results(test_results)
+    # Test 4:
+    expected = 0  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([0, 0], expected, test_results,
+                                  format_string)
+    actual = problem1a(0, 0)
+    print_actual_result_of_test(expected, actual, test_results, precision=3)
+
+    print_summary_of_test_results(test_results)
 
 
 def problem1a(m, n):
@@ -195,7 +203,7 @@ def problem1a(m, n):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this TEST function.
+    # DONE: 5. Implement this TEST function.
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.  Use the usual form:
     #
@@ -212,6 +220,41 @@ def run_test_problem1b():
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
+    format_string = '    problem1a( {}, {} )'
+    test_results = [0, 0]  # Number of tests passed, failed.
+    # Test 1:
+    expected = 5  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([3, 5], expected, test_results,
+                                  format_string)
+    actual = problem1b(3, 5)
+    print_actual_result_of_test(expected, actual, test_results, precision=3)
+
+    print_summary_of_test_results(test_results)
+    # Test 2:
+    expected = 1  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([2, 1], expected, test_results,
+                                  format_string)
+    actual = problem1b(2, 1)
+    print_actual_result_of_test(expected, actual, test_results, precision=3)
+
+    print_summary_of_test_results(test_results)
+    # Test 3:
+    expected = 44  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([5, 40], expected, test_results,
+                                  format_string)
+    actual = problem1b(5, 40)
+    print_actual_result_of_test(expected, actual, test_results, precision=3)
+
+    print_summary_of_test_results(test_results)
+    # Test 1:
+    expected = 0  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([6, 1], expected, test_results,
+                                  format_string)
+    actual = problem1b(6, 1)
+    print_actual_result_of_test(expected, actual, test_results, precision=3)
+
+    print_summary_of_test_results(test_results)
+
 
 
 def problem1b(m, f):
@@ -231,7 +274,7 @@ def problem1b(m, f):
            since there are 44 primes between 5 and 200.
      """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     ###########################################################################
@@ -244,6 +287,11 @@ def problem1b(m, f):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
+    primes = 0
+    for k in range((f*m)-m+1):
+        if is_prime(m + k) == True:
+            primes = primes + 1
+    return primes
 
 
 def run_test_problem1c():
