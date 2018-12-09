@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and Daniel Su.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -113,9 +113,23 @@ def problem2a(circle, rectangle, window):
     # -------------------------------------------------------------------------
     circle.attach_to(window)
     rectangle.attach_to(window)
+    window.render()
     window.continue_on_mouse_click()
-    rectangle.corner_1
-    line = rg.Line('arrow', )
+    x1 = rectangle.corner_1.x
+    x2 = rectangle.corner_2.x
+    y1 = rectangle.corner_1.y
+    y2 = rectangle.corner_2.y
+    if (x1 > x2) & (y1 > y2):
+        line = rg.Line(rg.Point(x1,y2),rg.Point(x2,y1))
+    if (x1 > x2) & (y2 > y1):
+        line = rg.Line(rg.Point(x1,y1),rg.Point(x2,y2))
+    if (x2 > x1) & (y1 > y2):
+        line = rg.Line(rg.Point(x2,y2),rg.Point(x1,y1))
+    if (x2 > x1) & (y2 > y1):
+        line = rg.Line(rg.Point(x2,y1),rg.Point(x1,y2))
+    line.arrow = "last"
+    line.attach_to(window)
+    window.render()
 def run_test_problem2b():
     """ Tests the  problem2b   function. """
     print()
