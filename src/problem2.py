@@ -130,6 +130,9 @@ def problem2a(circle, rectangle, window):
     line.arrow = "last"
     line.attach_to(window)
     window.render()
+    window.continue_on_mouse_click()
+    circle.fill_color = rectangle.outline_color
+    window.render()
 def run_test_problem2b():
     """ Tests the  problem2b   function. """
     print()
